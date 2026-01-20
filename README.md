@@ -1,6 +1,3 @@
-Sure Sanjay ✅ here’s a **humanised + clean README** with only the **required details**, and it clearly mentions **Pydantic usage** (without long deployment steps).
-
----
 
 # EscalateAI – Complaint Writer & Escalation Generator
 
@@ -11,8 +8,7 @@ The goal is simple: **write the right message in the right tone**, so issues get
 ---
 
 ## Live Links
-(https://escalate-ai-git-main-sanjaythefire0s-projects.vercel.app/)
-
+https://escalate-ai.vercel.app/
 ---
 
 ## What it Generates
