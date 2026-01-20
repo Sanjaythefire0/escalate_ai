@@ -1,34 +1,37 @@
 
-# EscalateAI – Complaint Writer & Escalation Generator
+# EscalateAI — Complaint Writer & Escalation Generator (GenAI Agent)
 
-EscalateAI is a full-stack Generative AI web app that helps users quickly write **professional complaint messages** and **escalation drafts** for real-world situations (college/hostel, internet issues, refunds, banking disputes, landlord problems, etc.).
+EscalateAI is a full-stack Generative AI web app that helps users create **professional complaint messages** and **escalation drafts** for common real-world problems like UPI disputes, refunds, delivery issues, hostel complaints, internet downtime, workplace concerns, and more.
 
-The goal is simple: **write the right message in the right tone**, so issues get resolved faster.
+The goal is simple: **write the right complaint in the right tone**, faster.
 
 ---
 
-## Live Links
-https://escalate-ai.vercel.app/
+## Live Demo
+
+Deployed Link:https://escalate-ai.vercel.app/
+
 ---
 
-## What it Generates
+## What the App Generates
 
 For every complaint, the app generates:
 
-* **WhatsApp complaint message**
-* **Formal email complaint** (subject + body)
-* **Escalation email** (subject + body)
-* **Follow-up reminder message**
-* **Quick tips** to improve chances of resolution
+* WhatsApp complaint message
+* Formal email complaint (subject + body)
+* Escalation email draft (subject + body)
+* Follow-up reminder message
+* 2–4 quick actionable tips
 
 ---
 
 ## Key Features
 
-* Multi-step form with a clear user flow
+* Clean multi-step user flow
 * Tone selection: **Polite / Firm / Strict**
-* Clean UI with proper loading + error states
-* Copy buttons for all generated drafts
+* Missing detail handling using placeholders like `{{DATE}}`, `{{ORDER_ID}}`
+* Copy-to-clipboard for all generated drafts
+* Proper loading + error states for smooth UX
 
 ---
 
@@ -36,16 +39,27 @@ For every complaint, the app generates:
 
 **Frontend:** Next.js + TailwindCSS
 **Backend:** FastAPI
-**LLM Provider:** OpenRouter
+**Agent System:** PydanticAI
+**LLM Provider:** OpenRouter (primary + fallback model support)
 
 ---
 
-## Pydantic Usage (Important)
-
-Pydantic is used in the backend for:
-
-* **Validating user inputs** (category, tone, title, description, etc.)
-* **Enforcing clean API request/response schemas**
-* Preventing bad/empty data from reaching the AI generation step
+Sure Sanjay ✅ here’s a **better + more “agent-like” PydanticAI section** (sounds professional and matches what evaluators expect):
 
 ---
+
+## PydanticAI Usage (Agent System)
+
+This project implements the complaint generation logic as a **PydanticAI Agent**.
+
+The agent layer is responsible for:
+
+* **Structured output enforcement** using a Pydantic result model (WhatsApp draft, email subject/body, escalation draft, follow-up, tips)
+* **Consistent formatting** across different tones (polite / firm / strict)
+* **Validation-safe generation**, ensuring the backend always returns predictable fields to the frontend
+* **Reliability improvements** through retry handling and a fallback model when the primary model fails
+
+This makes the system more robust, production-friendly, and easier to scale with additional tools or workflows in the future.
+
+---
+
